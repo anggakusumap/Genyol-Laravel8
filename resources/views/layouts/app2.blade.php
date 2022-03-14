@@ -19,8 +19,6 @@
 
 <body>
 
-    @include('components.navbar2')
-
     @yield('content')
 
     <!-- Optional JavaScript; choose one of the two! -->

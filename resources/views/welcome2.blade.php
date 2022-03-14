@@ -1,5 +1,7 @@
 @extends('layouts.app2')
 
+@include('components.navbar2')
+
 @section('content')
 
 <section class="banner">
