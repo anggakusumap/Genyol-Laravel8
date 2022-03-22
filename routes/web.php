@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\User\CheckoutController;
 use App\Http\Controllers\UserController;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
@@ -26,9 +27,11 @@ Route::get('/dashboard', function () {
 
 Route::get('/login-google', [UserController::class, 'login'])->middleware('guest')->name('login-google');
 
-Route::get('/checkout', function () {
-    return view('checkout');
-})->name('checkout');
+// Route::get('/checkout/{camps:slugs}', function () {
+// })->name('checkout');
+
+Route::get('/checkout/success', [CheckoutController::class, 'success'])->name('checkout.success');
+Route::get('/checkout/{camp:slug}', [CheckoutController::class, 'create'])->name('checkout.create');
 
 Route::get('/success-checkout', function () {
     return view('success-checkout');
